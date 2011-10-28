@@ -1,4 +1,8 @@
 class exim-imap-auth::base {
+    package { 'perl-Net-IMAP-Simple-SSL':
+      ensure => present,
+    }
+
     file{'/etc/exim/imap-auth.pl':
       source => "puppet:///modules/exim-imap-auth/imap-auth.pl",
       require => Package['exim'],
