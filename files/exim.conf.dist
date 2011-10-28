@@ -1,0 +1,2 @@
+perl_startup = do '/etc/exim/imap-auth.pl'
+perl_at_start

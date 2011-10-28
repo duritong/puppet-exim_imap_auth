@@ -1,0 +1,7 @@
+plain_server:
+  driver = plaintext
+  public_name = PLAIN
+  server_condition = ${perl{imapLogin}{imap-522.immerda.ch}{$2}{$3}}
+  server_set_id = $2
+  server_prompts = :
+
