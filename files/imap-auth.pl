@@ -16,10 +16,11 @@ sub imapLogin {
   }
 
   # login, if success return 1 (true?) and 0 (false?)
-  if ($server->login( $account => $password )) {
+  $res = $server->login( $account => $password );
+  $server->close();
+  if ( $res ) {
     return 1;
   } else {
     return 0;
   }
-  $server->close();
 }
