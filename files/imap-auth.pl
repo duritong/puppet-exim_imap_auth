@@ -15,10 +15,6 @@ sub imapLogin {
     return 0;
   }
 
-  # if we have a " in a password, we need to escape that, as the perl IMAP
-  # library won't do that for us. Otherwise authentication will fail.
-  $password =~ s/"/\\"/g;
-
   # login, if success return 1 (true?) and 0 (false?)
   if ($server->login( $account => $password )) {
     return 1;
